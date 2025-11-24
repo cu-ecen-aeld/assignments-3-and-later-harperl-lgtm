@@ -8,7 +8,7 @@ writestr=$2
 # 1. Check if the number of arguments is correct.
 if [ $# -ne 2 ]; then
   echo "Error: two arguments are required!"
-  echo "Usage: $0 <directory_path> <search_string>"
+  echo "Usage: $0 <writefile> <writestr>"
   exit 1
 fi
 
