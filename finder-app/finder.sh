@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+# Update shebang since QEMU does not have /bin/bash
 
 # Script to find a string in files within given directory
 
