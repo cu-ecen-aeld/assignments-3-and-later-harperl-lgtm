@@ -5,13 +5,15 @@
 set -e
 
 OUTDIR=$1
+ARCH=arm64
 
 if [ -z "${OUTDIR}" ]; then
     OUTDIR=/tmp/aeld
     echo "No outdir specified, using ${OUTDIR}"
 fi
 
-KERNEL_IMAGE=${OUTDIR}/Image
+# Updated KERNEL_IMAGE path since the default output path is now under linux-stable
+KERNEL_IMAGE=${OUTDIR}/linux-stable/arch/${ARCH}/boot/Image
 INITRD_IMAGE=${OUTDIR}/initramfs.cpio.gz
 
 if [ ! -e ${KERNEL_IMAGE} ]; then

@@ -12,6 +12,7 @@ if [ -z "${OUTDIR}" ]; then
     echo "No outdir specified, using ${OUTDIR}"
 fi
 
+# Updated KERNEL_IMAGE path since the default output path is now under linux-stable
 KERNEL_IMAGE=${OUTDIR}/linux-stable/arch/${ARCH}/boot/Image
 INITRD_IMAGE=${OUTDIR}/initramfs.cpio.gz
 
