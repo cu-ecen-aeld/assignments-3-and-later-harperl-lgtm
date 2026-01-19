@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# startup script for aesdsocket
+
+case "$1" in
+    start)
+        echo "Starting aesdsocket"
+        # -S: Start
+        # -n: Name check (ensures we don't start if already running)
+        # -a: Absolute path to executable
+        # -- : Signals end of start-stop-daemon flags, start of app flags
+        # -d: Run aesdsocket to in daemon mode
+        start-stop-daemon -S -n aesdsocket -a /usr/bin/aesdsocket -- -d
+        ;;
+    stop)
+        echo "Stopping aesdsocket"
+        # -K: Stop (Kill)
+        # -n: Name match
+        # Sends SIGTERM by default
+        start-stop-daemon -K -n aesdsocket
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+esac
+
+exit 0
